@@ -3,12 +3,14 @@ package main
 import (
 	"fmt"
 	"rsc.io/quote"
-	"github.com//memory1/gomodtest"
+	"github.com/memory1/gomodtest"
 
 )
+
 func CompareLength(l1, l2 float32) bool {
 	return l1 == l2
 }
+
 func main() {
 	fmt.Println(quote.Hello()) 
 	eq := CompareLength(1,2)
