@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"rsc.io/quote"
-	"github.com/memory1/gomodetest"
+	"github.com//memory1/gomodtest"
 
 )
 func CompareLength(l1, l2 float32) bool {
