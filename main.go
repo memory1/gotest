@@ -7,6 +7,7 @@ import (
 
 )
 
+//CompareLength ...
 func CompareLength(l1, l2 float32) bool {
 	return l1 == l2
 }
@@ -20,7 +21,7 @@ func main() {
 		fmt.Println("false")
 	}
 
-	eq2 := Mile(3).Equal(Mile(3))
+	eq2 := gomodtest.Mile(3).Equal(gomodtest.Mile(3))
 	if eq2 {
 		fmt.Println("equal")
 	} else {
