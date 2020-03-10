@@ -1,3 +1,10 @@
+package main
+import (
+	"path/filepath"
+	"sync"
+	"os"
+	"fmt"
+)
 func main() {
 	roots := os.Args[1:]
 	go func() {
