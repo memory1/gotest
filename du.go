@@ -54,10 +54,11 @@ func walkDir(dir string, n *sync.WaitGroup, fileSizes chan<- int64) {
 		if entry.IsDir() {
 			n.Add(1)
 			subdir := filepath.Join(dir, entry.Name())
+			fmt.Println(subdir)
 			go walkDir(subdir, n, fileSizes)
 		} else {
 			fileSizes <- entry.Size()
-			fmt.Println(filepath.Join(dir, entry.Name()), entry.Size()/1e3, "KB")
+			//fmt.Println(filepath.Join(dir, entry.Name()), entry.Size()/1e3, "KB")
 		}
 	}
 }
