@@ -42,7 +42,7 @@ func main() {
 	}
 
 func printDiskUsage(nfiles, nbytes int64) {
-	fmt.Printf("%d files %.1f GB\n", nfiles, float64(nbytes)/1e9)
+	fmt.Printf("%d files %.1f MB\n", nfiles, float64(nbytes)/1e6)
 	}
 
 func walkDir(dir string, n *sync.WaitGroup, fileSizes chan<- int64) {
@@ -57,6 +57,7 @@ func walkDir(dir string, n *sync.WaitGroup, fileSizes chan<- int64) {
 			go walkDir(subdir, n, fileSizes)
 		} else {
 			fileSizes <- entry.Size()
+			fmt.Println(filepath.Join(dir, entry.Name()), entry.Size()/1e3, "KB")
 		}
 	}
 }
